@@ -23,11 +23,11 @@ public class TipoDocumentoServiceImpl implements TipoDocumentoService {
 
     @Override
     public TipoDocumento modificar(TipoDocumento obj) {
-        Optional<TipoDocumento> findTipoProducto = tipoDocumentoRepository.findById(obj.getId());
-        if(findTipoProducto.isPresent()){
-            TipoDocumento retTipoDocumento = findTipoProducto.get();
-            BeanUtils.copyProperties(obj,retTipoDocumento);
-            return tipoDocumentoRepository.save(retTipoDocumento);
+        Optional<TipoDocumento> findTipDocument = tipoDocumentoRepository.findById(obj.getId());
+        if(findTipDocument.isPresent()){
+            TipoDocumento retTipDocument = findTipDocument.get();
+            BeanUtils.copyProperties(obj,retTipDocument);
+            return tipoDocumentoRepository.save(retTipDocument);
         }
         return null;
     }
@@ -39,8 +39,8 @@ public class TipoDocumentoServiceImpl implements TipoDocumentoService {
 
     @Override
     public TipoDocumento listarPorId(Long id) {
-        Optional<TipoDocumento> tipoDocumento = tipoDocumentoRepository.findById(id);
-        return tipoDocumento.isPresent() ? tipoDocumento.get() : new TipoDocumento();
+        Optional<TipoDocumento> tipDocument = tipoDocumentoRepository.findById(id);
+        return tipDocument.isPresent() ? tipDocument.get() : new TipoDocumento();
     }
 
     @Override

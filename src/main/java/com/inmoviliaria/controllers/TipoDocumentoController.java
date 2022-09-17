@@ -21,13 +21,13 @@ public class TipoDocumentoController {
     @GetMapping
     public ResponseEntity<List<TipoDocumento>> listar(){
         List<TipoDocumento> listTipoDocumento = service.listar();
-        return new ResponseEntity<List<TipoDocumento>>(listTipoDocumento, HttpStatus.OK);
+        return new ResponseEntity<>(listTipoDocumento, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<TipoDocumento> buscar(@PathVariable("id") Long id){
         TipoDocumento obj = service.listarPorId(id);
-        return new ResponseEntity<TipoDocumento>(obj, HttpStatus.OK);
+        return new ResponseEntity<>(obj, HttpStatus.OK);
     }
 
     @PostMapping
